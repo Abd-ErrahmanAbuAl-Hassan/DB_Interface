@@ -1,7 +1,8 @@
 The interface allow connection to db as Student, Staff, and System user.
 The student can see his personal and academic information, enrolled courses , and can enroll new course and drop course.
 The Staff can see his information and the courses that he teach and the students in each course and can edit the grade and degree of each student.
-The system user he is a staff but only admins can access feature in the system user like view all student and staff in db , register new student and staff , edit information and remove 
+The system user he is a staff but only admins can access feature in the system user like view all student and staff in db , register new student and staff , edit information and remove .
+
 Login View
 ![Screenshot 2024-12-26 131100](https://github.com/user-attachments/assets/d4034eb6-3101-473e-ac91-83a10e5ee004)
 System User View (Admin)
