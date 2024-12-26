@@ -1,0 +1,64 @@
+﻿a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}   
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #34495e;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+}
+
+.info {
+    margin-bottom: 15px;
+}
+
+    .info label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .info span {
+        display: block;
+        background: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+.container {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.personal-info, .academic-info {
+    flex: 1;
+}
+
+.divider {
+    width: 1px;
+    background-color: #ccc;
+    margin: 0 10px;
+    height: auto;
+    align-self: stretch;
+}

@@ -1,0 +1,71 @@
+﻿@model University.Web.Models.EnrollmentViewModel;
+@{
+    Layout = "_Student";
+}
+<h2>Enroll in a Course</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (!Model.AvailableCourses.Any())
+{
+    <p>No available courses to enroll in at the moment.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Credits</th>
+                <th>Mark</th>
+                <th>Lab Hours</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model.AvailableCourses)
+            {
+                <tr>
+                    <td>@course.CourseId</td>
+                    <td>@course.CourseName</td>
+                    <td>@course.Credits</td>  
+                    <td>@course.Mark</td>
+                    <td>@course.LapHours</td>
+                    <td>
+                        <form method="post" asp-action="EnrollPOST" asp-route-studentId="@Model.StudentId" asp-route-courseId="@course.CourseId">
+                            <button type="submit" class="btn btn-primary">Enroll</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<a href="@Url.Action("Index", "Student", new { studentId = Model.StudentId })" class="btn btn-secondary">Back to Dashboard</a>
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table-bordered {
+        border: 1px solid #ddd;
+    }
+
+    .table-bordered th, .table-bordered td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .table-bordered thead th {
+        background-color: #f9f9f9;
+        font-weight: bold;
+    }
+</style>

@@ -1,0 +1,71 @@
+﻿body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+    .sidebar .university {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+        .sidebar .university img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .sidebar .university h2 {
+            font-size: 18px;
+            color:white;
+            margin: 0;
+        }
+
+    .sidebar .menu {
+        margin-top: 20px;
+    }
+
+        .sidebar .menu a {
+            display: block;
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+            .sidebar .menu a:hover {
+                background-color: #34495e;
+            }
+
+.main-content {
+    flex: 1;
+    background-color: #ecf0f1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+    .main-content h1 {
+        margin-top: 0;
+    }
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}   

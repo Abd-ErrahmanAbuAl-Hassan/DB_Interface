@@ -1,0 +1,81 @@
+﻿@using University.Entities.Models
+@model IEnumerable<Student>
+
+<h2 class="page-title">Students List</h2>
+
+@{
+    Layout = "_SystemUser";
+}
+
+<table class="table table-hover table-bordered" width="100%">
+    <thead class="table-header">
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>SSN</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Enroll Year</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.FirstName @student.LastName</td>
+                <td>@student.Ssn</td>
+                <td>@student.Phone</td>
+                <td>@student.Email</td>
+                <td>@student.EnrollYear</td>
+                <td>
+                    <a class="btn btn-success btn-sm" asp-route-staffId="@ViewData["StaffID"]" asp-route-studentId="@student.StudentId"
+                       asp-action="Edit" asp-controller="SystemUser">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-route-staffId="@ViewData["StaffID"]" asp-route-studentId="@student.StudentId"
+                       asp-action="Remove" asp-controller="SystemUser">Remove</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    .page-title {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .table-header {
+        background-color: #f8f9fa;
+        color: #333;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    .table th, .table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .btn {
+        margin: 0 5px;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+</style>

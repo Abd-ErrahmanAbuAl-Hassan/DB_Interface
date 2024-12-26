@@ -1,0 +1,100 @@
+﻿@using University.Entities.Models
+@model Student
+
+@{
+    Layout = "_SystemUser";
+}
+
+<h2>Confirm Deletion</h2>
+<p>Are you sure you want to delete the following student?</p>
+
+<form asp-action="Remove" method="post">
+   
+    <input type="hidden" name="staffId" value="@ViewData["StaffID"]" />
+    <input type="hidden" name="studentId" value="@Model.StudentId" />
+
+    <div class="col-12 col-lg-6 pb-4">
+        <div class="row">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span>Student Details</span>
+            </h4>
+        </div>
+
+        <div class="row my-1">
+            <div class="col-3">Student ID</div>
+            <div class="col-9">
+                <input asp-for="StudentId" type="number" readonly class="form-control" />
+                <span asp-validation-for="StudentId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row my-1">
+            <div class="col-3">First Name</div>
+            <div class="col-9">
+                <input asp-for="FirstName" type="text" readonly class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row my-1">
+            <div class="col-3">Last Name</div>
+            <div class="col-9">
+                <input asp-for="LastName" type="text" readonly class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row my-1">
+            <div class="col-3">SSN</div>
+            <div class="col-9">
+                <input asp-for="Ssn" type="text" readonly class="form-control" />
+                <span asp-validation-for="Ssn" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row my-1">
+            <div class="col-3">Phone</div>
+            <div class="col-9">
+                <input asp-for="Phone" type="text" readonly class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row my-1">
+            <div class="col-3">Email</div>
+            <div class="col-9">
+                <input asp-for="Email" type="text" readonly class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row my-1">
+            <div class="col-3">Enroll Year</div>
+            <div class="col-9">
+                <input asp-for="EnrollYear" type="text" readonly class="form-control" />
+                <span asp-validation-for="EnrollYear" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row my-1">
+            <div class="col-3">Address</div>
+            <div class="col-9">
+                <input asp-for="Address" type="text" readonly class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row my-1">
+            <div class="col-3">Gender</div>
+            <div class="col-9">
+                <input asp-for="Gender" type="text" readonly class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-danger">Confirm Deletion</button>
+            <a class="btn btn-secondary" asp-action="ViewAllStudents" asp-route-staffId="@ViewData["StaffID"]">Cancel</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,68 @@
+﻿@model University.Web.Models.StudentDashboardViewModel;
+@{
+    Layout = "_Student";
+}
+
+<div class="container">
+    <h1>Student Basic Information</h1>
+
+    <div class="info-wrapper">
+        
+        <div class="section personal-info">
+            <h2>Personal Information</h2>
+            <div class="info">
+                <label for="student-name">Name:</label>
+                <span id="student-name">@Model.FullName</span>
+            </div>
+            <div class="info">
+                <label for="gender">Gender:</label>
+                <span id="gender">@Model.Gender</span>
+            </div>
+            <div class="info">
+                <label for="SSN">SSN:</label>
+                <span id="SSN">@Model.SSN</span>
+            </div>
+            <div class="info">
+                <label for="bofd">Birth Of Date:</label>
+                <span id="bofd">@Model.BirthOfDate</span>
+            </div>
+            <div class="info">
+                <label for="address">Address:</label>
+                <span id="Address">@Model.Address</span>
+            </div>
+            <div class="info">
+                <label for="email">Email:</label>
+                <span id="email">@Model.Email</span>
+            </div>
+            <div class="info">
+                <label for="phone">Phone:</label>
+                <span id="phone">@Model.Phone</span>
+            </div>
+        </div>
+
+       
+        <div class="divider"></div>
+
+        
+        <div class="section academic-info">
+            <h2>Academic Information</h2>
+            <div class="info">
+                <label for="student-id">Student ID:</label>
+                <span id="student-id">@Model.StudentID</span>
+               
+            </div>
+            <div class="info">
+                <label for="faculty">Faculty:</label>
+                <span id="faculty">@Model.FacultyName</span>
+            </div>
+            <div class="info">
+                <label for="program">Program:</label>
+                <span id="program">@Model.Major</span>
+            </div>
+            <div class="info">
+                <label for="enrollment-year">Enrollment Year:</label>
+                <span id="enrollment-year">@Model.EnrollYear</span>
+            </div>
+        </div>
+    </div>
+</div>

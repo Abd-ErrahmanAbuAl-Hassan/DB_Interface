@@ -1,0 +1,49 @@
+﻿@model dynamic
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link href="~/css/staff.css" rel="stylesheet" /> 
+    <link href="~/css/student_info.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  
+</head>
+<body>
+    <div class="sidebar">
+        <div class="university">
+
+            <h2 style="color:white">University</h2>
+        </div>
+        <div class="menu">
+            <a asp-route-staffId="@ViewData["StaffID"]" asp-action="Index" asp-controller="Staff">Basic Info</a>
+            <a asp-route-staffId="@ViewData["StaffID"]" asp-action="Courses" asp-controller="Staff">Courses</a>
+            <a asp-route-staffId="@ViewData["StaffID"]" asp-action="CoursesDetail" asp-controller="Staff">Enrolled Student</a>
+           
+        </div>
+        <div>
+            <a style="color:indianred" href="~/Login/index">Log out</a>
+
+        </div>
+    </div>
+
+  
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+   
+</body>
+</html>
+
+
+

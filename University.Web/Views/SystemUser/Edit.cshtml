@@ -1,0 +1,144 @@
+﻿@using University.Entities.Models
+@model Student
+
+@{
+    Layout = "_SystemUser";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="Edit" asp-controller="SystemUser" method="post">
+                <input type="hidden" name="staffId" value="@ViewData["StaffID"]" />
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <h4 class="text-center mb-4">Student Details</h4>
+
+                
+                <div class="form-group row">
+                    <label for="StudentId" class="col-sm-3 col-form-label">Student ID</label>
+                    <div class="col-sm-9">
+                        <input asp-for="StudentId" type="number" readonly class="form-control" id="StudentId" />
+                        <span asp-validation-for="StudentId" class="text-danger"></span>
+                    </div>
+                </div>
+
+              
+                <div class="form-group row">
+                    <label for="FirstName" class="col-sm-3 col-form-label">First Name</label>
+                    <div class="col-sm-9">
+                        <input asp-for="FirstName" type="text" class="form-control" id="FirstName" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="LastName" class="col-sm-3 col-form-label">Last Name</label>
+                    <div class="col-sm-9">
+                        <input asp-for="LastName" type="text" class="form-control" id="LastName" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                
+                <div class="form-group row">
+                    <label for="Ssn" class="col-sm-3 col-form-label">SSN</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Ssn" type="text" class="form-control" id="Ssn" />
+                        <span asp-validation-for="Ssn" class="text-danger"></span>
+                    </div>
+                </div>
+
+                
+                <div class="form-group row">
+                    <label for="Phone" class="col-sm-3 col-form-label">Phone</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Phone" type="text" class="form-control" id="Phone" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+
+              
+                <div class="form-group row">
+                    <label for="Email" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Email" type="text" class="form-control" id="Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+               
+                <div class="form-group row">
+                    <label for="EnrollYear" class="col-sm-3 col-form-label">Enroll Year</label>
+                    <div class="col-sm-9">
+                        <input asp-for="EnrollYear" type="text" class="form-control" id="EnrollYear" />
+                        <span asp-validation-for="EnrollYear" class="text-danger"></span>
+                    </div>
+                </div>
+
+                
+                <div class="form-group row">
+                    <label for="Address" class="col-sm-3 col-form-label">Address</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Address" type="text" class="form-control" id="Address" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+
+              
+                <div class="form-group row">
+                    <label for="Gender" class="col-sm-3 col-form-label">Gender</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Gender" type="text" class="form-control" id="Gender" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                </div>
+
+              
+                <div class="form-group row">
+                    <label for="BirthOfDate" class="col-sm-3 col-form-label">Date of Birth</label>
+                    <div class="col-sm-9">
+                        <input asp-for="BirthOfDate" type="date" class="form-control" id="BirthOfDate" />
+                        <span asp-validation-for="BirthOfDate" class="text-danger"></span>
+                    </div>
+                </div>
+
+               
+                <div class="form-group row">
+                    <div class="col-sm-12 text-center">
+                        <input type="submit" asp-action="Edit" class="btn btn-primary" value="Update Student Details" />
+                    </div>
+                </div>
+
+            </form>
+
+           
+            <div class="mt-3 text-center">
+                <a asp-action="ViewAllStudents" asp-route-staffId="@ViewData["StaffID"]" class="btn btn-link">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    .form-control {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+    .btn-primary {
+        padding: 0.75rem 1.5rem;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .btn-link {
+        text-decoration: none;
+        color: #007bff;
+    }
+    .btn-link:hover {
+        text-decoration: underline;
+    }
+</style>
